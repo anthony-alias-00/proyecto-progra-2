@@ -1,0 +1,17 @@
+******************************************
+           KLM ROYAL DUTCH AIRLINES       
+******************************************
+FECHA:    Wed Feb 04 21:48:02 GMT-05:00 2026
+BOLETO:   #2
+------------------------------------------
+PASAJERO: adad hhfh
+CÉDULA:   174327
+CORREO:   fgdfg
+------------------------------------------
+VUELO:    Vuelo EQ101
+RUTA:     UIO - Quito - GYE - Guayaquil
+CLASE:    Business Class
+ASIENTO:  4B
+------------------------------------------
+PRECIO UNITARIO: Precio: $60.00
+******************************************

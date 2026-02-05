@@ -1,0 +1,104 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam backgroundColor white
+skinparam roundCorner 10
+
+package "vuelosfis.modelo" {
+    class Aeropuerto {
+        - String codigoIATA
+        - String nombre
+        - String pais
+        + Aeropuerto(codigo: String, nombre: String, pais: String)
+        + getCodigoIATA(): String
+        + toString(): String
+    }
+
+    class Ruta {
+        - double duracionEstimada
+        + Ruta(origen: Aeropuerto, destino: Aeropuerto, duracion: double)
+        + getOrigen(): Aeropuerto
+        + getDestino(): Aeropuerto
+    }
+
+    class Vuelo {
+        - String codigoVuelo
+        - LocalDateTime fechaSalida
+        - double precioBase
+        + Vuelo(codigo: String, ruta: Ruta, fecha: LocalDateTime, avion: Avion, precio: double)
+        + getPrecioBase(): double
+        + getCodigoVuelo(): String
+    }
+
+    abstract class Avion {
+        - String matricula
+        - int capacidad
+        + Avion(matricula: String, capacidad: int)
+        + getMatricula(): String
+    }
+    
+    class Boeing787 extends Avion {
+        + Boeing787(matricula: String)
+    }
+
+    interface IEstrategiaPrecio {
+        + calcularPrecio(precioBase: double): double
+        + getDescripcion(): String
+    }
+
+    class EconomyLight implements IEstrategiaPrecio {
+        + calcularPrecio(precioBase: double): double
+        + getDescripcion(): String
+    }
+
+    class BusinessClass implements IEstrategiaPrecio {
+        + calcularPrecio(precioBase: double): double
+        + getDescripcion(): String
+    }
+
+    class GestorArchivos {
+        - String RUTA_CSV
+        + leerVuelosDesdeArchivo(): List<Vuelo>
+    }
+}
+
+package "vuelosfis.vista" {
+    class VentanaPrincipal {
+        - JComboBox cmbOrigen
+        - JComboBox cmbDestino
+        - JButton btnBuscar
+        - JButton btnReservar
+        - JTable tablaVuelos
+        + getBtnBuscar(): JButton
+        + getBtnReservar(): JButton
+        + getModeloTabla(): DefaultTableModel
+    }
+}
+
+package "vuelosfis.controlador" {
+    class ControladorVuelos {
+        + iniciar()
+        - buscarYListarVuelos()
+        - reservarVuelo()
+        - generarBoletoTxt()
+    }
+
+    class MainVuelosFIS {
+        + main(args: String[])
+    }
+}
+
+' Relaciones
+Ruta *-- Aeropuerto
+Vuelo *-- Ruta
+Vuelo o-- Avion
+Vuelo ..> IEstrategiaPrecio : usa (indirectamente en reserva)
+
+ControladorVuelos --> VentanaPrincipal : controla
+ControladorVuelos --> GestorArchivos : usa
+ControladorVuelos ..> Vuelo : manipula lista
+GestorArchivos ..> Vuelo : crea
+
+MainVuelosFIS ..> ControladorVuelos : arranca
+
+@enduml

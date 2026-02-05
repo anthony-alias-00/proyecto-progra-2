@@ -1,0 +1,17 @@
+******************************************
+        KLM - TARJETA DE EMBARQUE         
+******************************************
+PASAJERO:  JDSJDASKJLDSA DJKSLLJKDSJADKLS
+DOCUMENTO: Cédula (CI): 1756215446
+------------------------------------------
+VUELO:     KL8326
+ORIGEN:    UIO - Quito
+DESTINO:   AMS - Amsterdam
+FECHA IDA: 2026-02-02
+------------------------------------------
+ASIENTOS IDA:    [5C] 
+------------------------------------------
+PAGO:      Tarjeta (**** 4651)
+TOTAL PAGADO: $1592,50
+******************************************
+    ¡Gracias por volar con nosotros!      

@@ -1,0 +1,10 @@
+=== RECIBO DE VIAJE KLM ===
+BOLETO NÚMERO: 1
+FECHA: Thu Feb 05 08:13:56 GMT-05:00 2026
+---------------------------
+PASAJERO:  
+CÉDULA:   
+ASIENTO:  1A
+VUELO:    Vuelo AA3525
+PRECIO:   Hora: 23:40
+===========================

@@ -1,0 +1,14 @@
+========== RECIBO DE PASAJE - KLM ==========
+DATOS DEL PASAJERO:
+Cédula:   1751072909
+Pasajero: jhon null
+Correo:   jho.jihi
+--------------------------------------------
+DETALLES DEL VUELO:
+Vuelo:    Vuelo EQ101
+Tipo:     Economy Class
+Asiento:  4B
+--------------------------------------------
+TOTAL PAGADO: Precio: $60.00
+============================================
+Fecha: Wed Feb 04 20:46:58 GMT-05:00 2026

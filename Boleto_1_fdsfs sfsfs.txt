@@ -1,0 +1,5 @@
+=== BOLETO KLM ===
+Vuelo: Vuelo EQ101
+Pasajero: fdsfs sfsfs
+Asiento: 4B
+Precio: Precio: $60.00

@@ -1,0 +1,4 @@
+KLM BOARDING PASS
+Vuelo: KL1012
+Asientos: 4A
+Total: $3377.5

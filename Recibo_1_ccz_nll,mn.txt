@@ -1,0 +1,10 @@
+=== RECIBO DE VIAJE KLM ===
+BOLETO NÚMERO: 1
+FECHA: Thu Feb 05 00:30:26 GMT-05:00 2026
+---------------------------
+PASAJERO: ccz nll,mn
+CÉDULA:   ,nmn
+ASIENTO:  4C
+VUELO:    Vuelo LA502
+PRECIO:   Precio: $290.00
+===========================

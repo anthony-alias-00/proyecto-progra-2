@@ -1,0 +1,10 @@
+=== RECIBO DE VIAJE KLM ===
+BOLETO NÚMERO: 2
+FECHA: Wed Feb 04 23:08:44 GMT-05:00 2026
+---------------------------
+PASAJERO: ´paul fg
+CÉDULA:   152916+2
+ASIENTO:  2D
+VUELO:    Vuelo EQ102
+PRECIO:   Precio: $65.00
+===========================

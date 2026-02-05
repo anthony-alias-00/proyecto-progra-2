@@ -1,0 +1,10 @@
+=== RECIBO DE VIAJE KLM ===
+BOLETO NÚMERO: 1
+FECHA: Wed Feb 04 23:10:45 GMT-05:00 2026
+---------------------------
+PASAJERO: jhon 
+CÉDULA:   15151515
+ASIENTO:  1B
+VUELO:    Vuelo EQ103
+PRECIO:   Precio: $70.00
+===========================

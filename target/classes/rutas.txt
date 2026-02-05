@@ -1,0 +1,13 @@
+UIO - Quito
+GYE - Guayaquil
+CUE - Cuenca
+MEC - Manta
+GPS - Galapagos
+BOG - Bogota
+LIM - Lima
+PTY - Panama
+MIA - Miami
+JFK - New York
+MAD - Madrid
+AMS - Amsterdam
+BCN - Barcelona
