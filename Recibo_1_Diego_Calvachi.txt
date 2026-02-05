@@ -1,10 +1,10 @@
 === RECIBO DE VIAJE KLM ===
 BOLETO NÚMERO: 1
-FECHA: Thu Feb 05 07:33:02 GMT-05:00 2026
+FECHA: Thu Feb 05 08:31:47 GMT-05:00 2026
 ---------------------------
 PASAJERO: Diego Calvachi
 CÉDULA:   1751072908
-ASIENTO:  4B
-VUELO:    Vuelo EQ3618
-PRECIO:   Hora: 14:10
+ASIENTO:  7C
+VUELO:    Vuelo LA376
+PRECIO:   Hora: 08:40
 ===========================

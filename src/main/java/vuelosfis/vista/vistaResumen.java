@@ -16,8 +16,7 @@ public String rCorreo;
 initComponents();
     this.setLocationRelativeTo(null); 
     try {
-        // 1. Mostrar el vuelo (o vuelos)
-        // Si DatosReserva.vueloGlobal contiene varios vuelos, los mostramos todos
+      
         lblVuelo.setText(DatosReserva.vueloGlobal); 
         lblTipo.setText(DatosReserva.claseGlobal);
         
@@ -25,14 +24,12 @@ initComponents();
         String asientosTexto = String.join(", ", DatosReserva.listaAsientos);
         lblAsiento.setText(asientosTexto); 
 
-        // 3. CÁLCULO DEL TOTAL (Corregido para el nuevo formato)
-        // Limpiamos cualquier texto que no sea número o punto
+
         String precioLimpio = DatosReserva.precioUnitario.replaceAll("[^0-9.]", "").trim();
         
         if (!precioLimpio.isEmpty()) {
             double precioNum = Double.parseDouble(precioLimpio);
-            // El total es: (Precio Vuelo) * (Número de Pasajeros)
-            // Nota: Si es Ida y Vuelta, asegúrate de que precioUnitario ya sea la suma de ambos
+
             double total = precioNum * DatosReserva.listaNombres.size();
             lblTotal.setText("$ " + String.format("%.2f", total));
         }
