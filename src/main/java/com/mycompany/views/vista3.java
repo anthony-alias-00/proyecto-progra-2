@@ -2,7 +2,7 @@ package com.mycompany.views;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
-import com.mycompany.biblioteca_digital.base_datos.PersonaDAO;
+
 import com.mycompany.biblioteca_digital.modelo.Persona;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  
 public class vista3 extends javax.swing.JPanel {
 
-    private PersonaDAO personaDAO;
+    private com.mycompany.biblioteca_digital.servicio.RegistroUsuario personaDAO;
     private DefaultTableModel modeloTabla;
     
     public vista3() {
@@ -22,7 +22,7 @@ public class vista3 extends javax.swing.JPanel {
  * Inicializar componentes personalizados
  */
 private void inicializar() {
-    personaDAO = new PersonaDAO();
+    personaDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getRegistroUsuario();
     configurarTabla();
     cargarUsuarios();
 

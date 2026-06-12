@@ -4,7 +4,7 @@
  */
 package com.mycompany.views;
 
-import com.mycompany.biblioteca_digital.base_datos.LibroDAO;
+
 import java.awt.CardLayout;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -15,10 +15,10 @@ import java.awt.Component;
 
 /**
  *
- * @author ALEJANDRO
+ * @author ALEJANDROPER
  */
 public class registroL extends javax.swing.JPanel {
-    private LibroDAO libroDAO;
+    private com.mycompany.biblioteca_digital.servicio.LibroOpciones libroDAO;
     private JPanel panelContenedor;
     private CardLayout cardLayout;
     /**
@@ -26,7 +26,6 @@ public class registroL extends javax.swing.JPanel {
      */
     public registroL() {
         initComponents();
-        libroDAO = new LibroDAO();
         
  
 imagen3.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imagen3.png")).getImage().getScaledInstance(250, 200, java.awt.Image.SCALE_SMOOTH)));

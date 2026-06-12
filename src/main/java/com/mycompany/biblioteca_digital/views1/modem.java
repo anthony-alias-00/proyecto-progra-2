@@ -1,8 +1,7 @@
 package com.mycompany.biblioteca_digital.views1;
-
+import com.mycompany.biblioteca_digital.servicio.RegistroUsuario;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import com.mycompany.biblioteca_digital.base_datos.PersonaDAO;
 import com.mycompany.biblioteca_digital.modelo.Persona;
 import javax.swing.JOptionPane;
 /**
@@ -15,20 +14,20 @@ public class modem extends javax.swing.JPanel {
      * Creates new form modem
      */
     public modem() {
-        initComponents();
-        sello1.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sello.png")).getImage().getScaledInstance(120, 170, java.awt.Image.SCALE_SMOOTH)));
+    initComponents();
+    sello1.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sello.png")).getImage().getScaledInstance(120, 170, java.awt.Image.SCALE_SMOOTH)));
 
 // 2. Forzar el centrado horizontal dentro del espacio del Label
-sello1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-imagen7.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono5.png")).getImage().getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH)));
+    sello1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    imagen7.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono5.png")).getImage().getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH)));
 
 // 2. Forzar el centrado horizontal dentro del espacio del Label
-imagen7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    imagen7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-imagen8.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono6.png")).getImage().getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH)));
+    imagen8.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icono6.png")).getImage().getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH)));
 
 // 2. Forzar el centrado horizontal dentro del espacio del Label
-imagen8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    imagen8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     }
 
     /**
@@ -222,50 +221,43 @@ imagen8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-    // Obtener datos ingresados
+                                   
     String usuario = txtUsuario.getText().trim();
     String contraseña = txtContraseña.getText().trim();
-    
-    // Validar campos vacíos
-    if (usuario.isEmpty() || contraseña.isEmpty()) {
+
+    if (usuario.isEmpty() || contraseña.isEmpty()
+            || usuario.equals("Ingrese su usuario")
+            || contraseña.equals("***********")) {
         JOptionPane.showMessageDialog(this,
             "Por favor complete todos los campos",
             "Campos Vacíos",
             JOptionPane.WARNING_MESSAGE);
         return;
     }
-    
-    // Intentar login
-    PersonaDAO personaDAO = new PersonaDAO();
-    Persona persona = personaDAO.login(usuario, contraseña);
-    
-    // Verificar resultado
+
+    RegistroUsuario registro = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getRegistroUsuario();
+    Persona persona = registro.login(usuario, contraseña);
+
     if (persona != null) {
-        // Login exitoso
         JOptionPane.showMessageDialog(this,
             "Bienvenido " + persona.getNombre() + " " + persona.getApellido() + "\n" +
             "Tipo: " + persona.getTipo(),
             "Login Exitoso",
             JOptionPane.INFORMATION_MESSAGE);
-        
-        // Abrir VentanaPrincipal y pasar el usuario logueado
+
         java.awt.Window ventana = javax.swing.SwingUtilities.getWindowAncestor(this);
         ventana.dispose();
-        
         new com.mycompany.biblioteca_digital.vista.VentanaPrincipal(persona).setVisible(true);
-        
+
     } else {
-        // Login fallido
         JOptionPane.showMessageDialog(this,
-            "Usuario o contraseña incorrectos\n\n" +
-            "Por favor verifique sus credenciales e intente nuevamente.",
+            "Usuario o contraseña incorrectos\n\nPor favor verifique sus credenciales.",
             "Error de Autenticación",
             JOptionPane.ERROR_MESSAGE);
-        
-        // Limpiar campos
         txtContraseña.setText("");
         txtUsuario.requestFocus();
     }
+
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed

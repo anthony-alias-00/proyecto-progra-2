@@ -22,6 +22,7 @@ portada1.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().
 portada1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     }
 private void initcontents(){
+  com.mycompany.biblioteca_digital.servicio.AppContext.getInstance();
   ShowJPanel(new modem());
 }
   public void ShowJPanel(JPanel v1){

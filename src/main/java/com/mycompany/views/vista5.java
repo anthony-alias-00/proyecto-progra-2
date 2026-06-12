@@ -2,7 +2,6 @@ package com.mycompany.views;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
-import com.mycompany.biblioteca_digital.base_datos.LibroDAO;
 import com.mycompany.biblioteca_digital.modelo.Libro;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +12,7 @@ import java.awt.CardLayout;
 
 public class vista5 extends javax.swing.JPanel {
 
-    private LibroDAO libroDAO;
+    private com.mycompany.biblioteca_digital.servicio.LibroOpciones libroDAO;
     private DefaultTableModel modeloTabla;
      private JPanel panelContenedor;
     private CardLayout cardLayout;
@@ -36,7 +35,7 @@ public class vista5 extends javax.swing.JPanel {
         
         try {
             // Inicializar DAO
-            libroDAO = new LibroDAO();
+            libroDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getLibroOpciones();
             
             // Configurar tabla
             configurarTabla();
@@ -148,7 +147,7 @@ public void cargarLibros() {
     modeloTabla.setRowCount(0);
     
     // Obtener libros de la BD
-    List<Libro> libros = libroDAO.obtenerTodos();
+    List<Libro> libros = libroDAO.obtenerTodosLosLibros();
     
     // Llenar tabla
     for (Libro libro : libros) {

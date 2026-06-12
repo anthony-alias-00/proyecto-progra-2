@@ -1,9 +1,5 @@
 package com.mycompany.views;
 
-
-import com.mycompany.biblioteca_digital.base_datos.PrestamoDAO;
-import com.mycompany.biblioteca_digital.base_datos.LibroDAO;
-import com.mycompany.biblioteca_digital.base_datos.PersonaDAO;
 import com.mycompany.biblioteca_digital.modelo.Prestamo;
 import com.mycompany.biblioteca_digital.modelo.Libro;
 import com.mycompany.biblioteca_digital.modelo.Persona;
@@ -14,9 +10,9 @@ import javax.swing.JOptionPane;
 
 public class vista4 extends javax.swing.JPanel {
 
-    private PrestamoDAO prestamoDAO;
-    private LibroDAO libroDAO;
-    private PersonaDAO personaDAO;
+    private com.mycompany.biblioteca_digital.servicio.PrestamoControl prestamoDAO;
+    private com.mycompany.biblioteca_digital.servicio.LibroOpciones libroDAO;
+    private com.mycompany.biblioteca_digital.servicio.RegistroUsuario personaDAO;   
     private Persona usuarioLogueado;  // ✅ AGREGAR
     
     /**
@@ -50,9 +46,9 @@ public class vista4 extends javax.swing.JPanel {
  * Inicializar DAOs
  */
 private void inicializar() {
-    prestamoDAO = new PrestamoDAO();
-    libroDAO = new LibroDAO();
-    personaDAO = new PersonaDAO();
+    prestamoDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getPrestamoControl();
+    libroDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getLibroOpciones();
+    personaDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getRegistroUsuario();
         
 // Configurar imagen
         foto2.setIcon(new javax.swing.ImageIcon(
@@ -197,7 +193,7 @@ private void devolverLibro() {
     
     
     // Buscar el prestamo
-    Prestamo prestamo = prestamoDAO.buscarPorId(idPrestamo);
+    Prestamo prestamo = prestamoDAO.buscarPrestamoPorId(idPrestamo);
     
     if (prestamo == null) {
         JOptionPane.showMessageDialog(this,

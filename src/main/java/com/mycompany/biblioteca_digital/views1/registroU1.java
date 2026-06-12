@@ -1,6 +1,4 @@
 package com.mycompany.biblioteca_digital.views1;
-
-import com.mycompany.biblioteca_digital.base_datos.PersonaDAO;
 import com.mycompany.biblioteca_digital.modelo.Usuario;
 import javax.swing.JOptionPane;
 
@@ -326,9 +324,10 @@ imagen9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     nuevoUsuario.setActivo(true);
     
     // Intentar registrar
-    PersonaDAO personaDAO = new PersonaDAO();
-    boolean exito = personaDAO.insertar(nuevoUsuario);
-    
+    // Intentar registrar con AppContext
+    com.mycompany.biblioteca_digital.servicio.RegistroUsuario registro = 
+    com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getRegistroUsuario();
+    boolean exito = registro.registrarUsuario(nuevoUsuario);
     // Mostrar resultado
     if (exito) {
         // ÉXITO

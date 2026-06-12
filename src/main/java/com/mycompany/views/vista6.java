@@ -1,7 +1,6 @@
 package com.mycompany.views;
 
 
-import com.mycompany.biblioteca_digital.base_datos.PrestamoDAO;
 import com.mycompany.biblioteca_digital.modelo.Prestamo;
 import com.mycompany.biblioteca_digital.modelo.Persona;
 import java.util.List;
@@ -10,8 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import java.time.format.DateTimeFormatter;
 
 public class vista6 extends javax.swing.JPanel {
-    
-    private PrestamoDAO prestamoDAO;
+    private com.mycompany.biblioteca_digital.servicio.PrestamoControl prestamoDAO;
     private DefaultTableModel modeloTabla;
     private DateTimeFormatter formatoFecha;
     private Persona usuarioLogueado; 
@@ -36,7 +34,7 @@ public class vista6 extends javax.swing.JPanel {
  * Inicializar componentes personalizados
  */
 private void inicializar() {
-        prestamoDAO = new PrestamoDAO();
+        prestamoDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getPrestamoControl();
         formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         configurarTabla();
         cargarReportes();
@@ -195,9 +193,9 @@ private void inicializar() {
             if ("TODOS".equals(estado)) {
                 prestamos = prestamoDAO.obtenerTodos();
             } else if ("ACTIVOS".equals(estado)) {
-                prestamos = prestamoDAO.obtenerActivos();
+                prestamos = prestamoDAO.obtenerPrestamosActivos();
             } else if ("VENCIDOS".equals(estado)) {
-                prestamos = prestamoDAO.obtenerVencidos();
+                prestamos = prestamoDAO.obtenerPrestamosVencidos();
             } else if ("DEVUELTO".equals(estado)) {
                 List<Prestamo> todosPrestamos = prestamoDAO.obtenerTodos();
                 for (Prestamo p : todosPrestamos) {

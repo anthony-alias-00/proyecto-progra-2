@@ -1,8 +1,6 @@
 package com.mycompany.views;
 
-import com.mycompany.biblioteca_digital.base_datos.PrestamoDAO;
-import com.mycompany.biblioteca_digital.base_datos.LibroDAO;
-import com.mycompany.biblioteca_digital.base_datos.PersonaDAO;
+
 import com.mycompany.biblioteca_digital.modelo.Prestamo;
 import com.mycompany.biblioteca_digital.modelo.Libro;
 import com.mycompany.biblioteca_digital.modelo.Usuario;
@@ -14,9 +12,9 @@ import java.util.List;
 
 public class vista2 extends javax.swing.JPanel {
 
-    private PrestamoDAO prestamoDAO;
-    private LibroDAO libroDAO;
-    private PersonaDAO personaDAO;
+    private com.mycompany.biblioteca_digital.servicio.PrestamoControl prestamoDAO;
+    private com.mycompany.biblioteca_digital.servicio.LibroOpciones libroDAO;
+    private com.mycompany.biblioteca_digital.servicio.RegistroUsuario personaDAO;
     private Persona usuarioLogueado;
     
     public vista2(Persona usuario) {
@@ -47,9 +45,9 @@ public vista2() {
  * Inicializar DAOs
  */
 private void inicializar() {
-    prestamoDAO = new PrestamoDAO();
-    libroDAO = new LibroDAO();
-    personaDAO = new PersonaDAO();
+    prestamoDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getPrestamoControl();
+    libroDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getLibroOpciones();
+    personaDAO = com.mycompany.biblioteca_digital.servicio.AppContext.getInstance().getRegistroUsuario();
     
     // Cargar datos en los selectores
     cargarUsuarios();
@@ -105,7 +103,7 @@ private void cargarLibros() {
     cmbLibros.removeAllItems();
     cmbLibros.addItem("-- Seleccione un libro --");
     
-    List<Libro> libros = libroDAO.obtenerTodos();
+    List<Libro> libros = libroDAO.obtenerTodosLosLibros();
        int count = 0;
     for (Libro libro : libros) {
         if (libro.isActivo() && libro.getCantidadDisponible() > 0) {
