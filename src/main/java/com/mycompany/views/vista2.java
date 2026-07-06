@@ -58,18 +58,20 @@ private void inicializar() {
  * Configurar interfaz segun el rol del usuario
  */
 private void configurarSegunRol() {
-    if (usuarioLogueado == null) {
+   if (usuarioLogueado == null) {
         return;
     }
     
     if ("USUARIO".equalsIgnoreCase(usuarioLogueado.getTipo())) {
-        // MODO USUARIO: No puede seleccionar otros usuarios
-       
-        // Ocultar ComboBox de usuarios
         cmbUsuarios.setVisible(false);
+        
+        // ✅ Mostrar el nombre junto a "Usuario:"
+        texto3.setText("Usuario: " + usuarioLogueado.getNombre() + " " + usuarioLogueado.getApellido());
+        texto3.setBounds(texto3.getX(), texto3.getY(), 260, texto3.getHeight());
         
     } else {
         cmbUsuarios.setVisible(true);
+        texto3.setText("Usuario:");
     }
 }
 

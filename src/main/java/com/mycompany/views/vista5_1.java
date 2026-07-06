@@ -10,18 +10,18 @@ import javax.swing.JPanel;
 import java.awt.CardLayout;
 
 
-public class vista5 extends javax.swing.JPanel {
+public class vista5_1 extends javax.swing.JPanel {
 
     private com.mycompany.biblioteca_digital.servicio.LibroOpciones libroDAO;
     private DefaultTableModel modeloTabla;
      private JPanel panelContenedor;
     private CardLayout cardLayout;
     
-    public vista5() {
+    public vista5_1() {
         initComponents();
      inicializar();
     }
-    public vista5(JPanel panelContenedor, CardLayout cardLayout) {
+    public vista5_1(JPanel panelContenedor, CardLayout cardLayout) {
           initComponents();
         
         // Guardar referencias

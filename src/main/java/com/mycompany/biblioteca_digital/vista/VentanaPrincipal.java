@@ -3,7 +3,7 @@ package com.mycompany.biblioteca_digital.vista;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
-
+import javax.swing.JOptionPane;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMTMaterialLighterIJTheme;
 
 import java.awt.BorderLayout;
@@ -87,7 +87,9 @@ private void setupIcons() {
         boton3.setIcon(getScaledIcon("/imagenes/usuario.png", 38, 39));
         boton4.setIcon(getScaledIcon("/imagenes/libro.png", 38, 39));
         boton6.setIcon(getScaledIcon("/imagenes/reporte.png", 38, 39));
-    }
+        boton7.setIcon(getScaledIcon("/imagenes/sala.png", 38, 39)); // o el ícono que uses
+         boton8.setIcon(getScaledIcon("/imagenes/salirss.png", 38, 39)); // o el ícono que uses
+}
 private ImageIcon getScaledIcon(String path, int width, int height) {
         try {
             Image img = new ImageIcon(getClass().getResource(path)).getImage();
@@ -129,6 +131,7 @@ private void setdate() {
     ventana.add(v1, BorderLayout.CENTER);
     ventana.revalidate();
     ventana.repaint();
+    
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -147,13 +150,15 @@ private void setdate() {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        boton6 = new javax.swing.JButton();
         boton = new javax.swing.JButton();
+        boton6 = new javax.swing.JButton();
         boton1 = new javax.swing.JButton();
         boton2 = new javax.swing.JButton();
         boton3 = new javax.swing.JButton();
         boton4 = new javax.swing.JButton();
         sello = new javax.swing.JLabel();
+        boton7 = new javax.swing.JButton();
+        boton8 = new javax.swing.JButton();
         etiqueta = new javax.swing.JLabel();
         ventana = new javax.swing.JPanel();
 
@@ -219,17 +224,6 @@ private void setdate() {
         jSeparator1.setAutoscrolls(true);
         jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        boton6.setBackground(new java.awt.Color(0, 51, 102));
-        boton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        boton6.setForeground(new java.awt.Color(255, 255, 255));
-        boton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
-        boton6.setText("REPORTE");
-        boton6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 35, new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png")))); // NOI18N
-        boton6.setBorderPainted(false);
-        boton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        boton6.setIconTextGap(28);
-        boton6.addActionListener(this::boton6ActionPerformed);
-
         boton.setBackground(new java.awt.Color(0, 51, 102));
         boton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         boton.setForeground(new java.awt.Color(255, 255, 255));
@@ -241,6 +235,17 @@ private void setdate() {
         boton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         boton.setIconTextGap(35);
         boton.addActionListener(this::botonActionPerformed);
+
+        boton6.setBackground(new java.awt.Color(0, 51, 102));
+        boton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        boton6.setForeground(new java.awt.Color(255, 255, 255));
+        boton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
+        boton6.setText("REPORTE");
+        boton6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 35, new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png")))); // NOI18N
+        boton6.setBorderPainted(false);
+        boton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        boton6.setIconTextGap(28);
+        boton6.addActionListener(this::boton6ActionPerformed);
 
         boton1.setBackground(new java.awt.Color(0, 51, 102));
         boton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -290,6 +295,28 @@ private void setdate() {
         sello.setText("1");
         sello.setBorder(new javax.swing.border.MatteBorder(null));
 
+        boton7.setBackground(new java.awt.Color(0, 51, 102));
+        boton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        boton7.setForeground(new java.awt.Color(255, 255, 255));
+        boton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
+        boton7.setText("SALAS");
+        boton7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 35, new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png")))); // NOI18N
+        boton7.setBorderPainted(false);
+        boton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        boton7.setIconTextGap(28);
+        boton7.addActionListener(this::boton7ActionPerformed);
+
+        boton8.setBackground(new java.awt.Color(0, 51, 102));
+        boton8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        boton8.setForeground(new java.awt.Color(255, 255, 255));
+        boton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png"))); // NOI18N
+        boton8.setText("CERRAR");
+        boton8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 15, 1, 35, new javax.swing.ImageIcon(getClass().getResource("/imagenes/reporte.png")))); // NOI18N
+        boton8.setBorderPainted(false);
+        boton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        boton8.setIconTextGap(28);
+        boton8.addActionListener(this::boton8ActionPerformed);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -297,7 +324,6 @@ private void setdate() {
             .addComponent(boton, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(boton2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(boton3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(boton4, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -306,6 +332,12 @@ private void setdate() {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(sello, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(boton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boton8, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,14 +356,21 @@ private void setdate() {
                         .addGap(60, 60, 60)
                         .addComponent(boton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(boton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(60, 60, 60)
-                        .addComponent(boton4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(boton4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boton7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boton8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
+
+        boton6.getAccessibleContext().setAccessibleName("Reporte");
+        boton7.getAccessibleContext().setAccessibleName("Salas");
 
         etiqueta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         etiqueta.setText("UNIDAD EDUCATIVA TUMBACO");
@@ -342,11 +381,11 @@ private void setdate() {
         ventana.setLayout(ventanaLayout);
         ventanaLayout.setHorizontalGroup(
             ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         ventanaLayout.setVerticalGroup(
             ventanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 457, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -355,13 +394,13 @@ private void setdate() {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(291, 291, 291)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -393,7 +432,7 @@ private void setdate() {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
         );
 
         pack();
@@ -426,20 +465,21 @@ private void setdate() {
     private void boton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton4ActionPerformed
         // TODO add your handling code here:
                JPanel panelLibros = new JPanel(new java.awt.CardLayout());
-    
+               
+
     // Obtener el CardLayout
     java.awt.CardLayout cardLayout = (java.awt.CardLayout) panelLibros.getLayout();
     
-    // Crear vista5 Y registroL
-    vista5 panelListaLibros = new vista5(panelLibros, cardLayout);
+    // Crear vista7 Y registroL
+    vista5_1 panelListaLibros = new vista5_1(panelLibros, cardLayout);
     registroL panelRegistroLibros = new registroL(panelLibros, cardLayout);
     
     // Agregar ambos paneles al CardLayout
-    panelLibros.add(panelListaLibros, "vista5");
+    panelLibros.add(panelListaLibros, "vista5_1");
     panelLibros.add(panelRegistroLibros, "registroL");
     
-    // Mostrar vista5
-    cardLayout.show(panelLibros, "vista5");
+    // Mostrar vista7
+    cardLayout.show(panelLibros, "vista5_1");
     
     // Mostrar el panel contenedor
     ShowJPanel(panelLibros);
@@ -452,6 +492,26 @@ private void setdate() {
 
     }//GEN-LAST:event_boton6ActionPerformed
 
+    private void boton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton7ActionPerformed
+        // TODO add your handling code here:
+          ShowJPanel(new vista7(usuarioLogueado));
+    }//GEN-LAST:event_boton7ActionPerformed
+
+    private void boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton8ActionPerformed
+        // TODO add your handling code here:
+         int confirmar = JOptionPane.showConfirmDialog(this,
+        "¿Deseas cerrar sesión?",
+        "Cerrar Sesión",
+        JOptionPane.YES_NO_OPTION);
+
+    if (confirmar == JOptionPane.YES_OPTION) {
+        this.dispose(); // cierra SOLO esta ventana, no el programa
+        new com.mycompany.biblioteca_digital.vista.VentanaLoading1().setVisible(true); // vuelve al login
+    }
+    }//GEN-LAST:event_boton8ActionPerformed
+
+
+    
     /**
      * @param args the command line arguments
      */
@@ -477,6 +537,8 @@ private void setdate() {
     private javax.swing.JButton boton3;
     private javax.swing.JButton boton4;
     private javax.swing.JButton boton6;
+    private javax.swing.JButton boton7;
+    private javax.swing.JButton boton8;
     private javax.swing.JLabel etiqueta;
     private javax.swing.JLabel etiqueta1;
     private javax.swing.JLabel etiqueta2;

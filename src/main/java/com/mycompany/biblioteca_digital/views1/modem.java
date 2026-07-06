@@ -15,6 +15,7 @@ public class modem extends javax.swing.JPanel {
      */
     public modem() {
     initComponents();
+    txtContraseña.setText("");
     sello1.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sello.png")).getImage().getScaledInstance(120, 170, java.awt.Image.SCALE_SMOOTH)));
 
 // 2. Forzar el centrado horizontal dentro del espacio del Label
@@ -46,7 +47,6 @@ public class modem extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         sello1 = new javax.swing.JLabel();
@@ -54,6 +54,7 @@ public class modem extends javax.swing.JPanel {
         imagen7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        txtContraseña = new javax.swing.JPasswordField();
 
         vista.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -96,18 +97,6 @@ public class modem extends javax.swing.JPanel {
         });
         txtUsuario.addActionListener(this::txtUsuarioActionPerformed);
 
-        txtContraseña.setForeground(new java.awt.Color(204, 204, 204));
-        txtContraseña.setText("***********");
-        txtContraseña.setBorder(null);
-        txtContraseña.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtContraseñaFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtContraseñaFocusLost(evt);
-            }
-        });
-
         jSeparator1.setBackground(new java.awt.Color(153, 0, 51));
         jSeparator1.setForeground(new java.awt.Color(0, 51, 102));
 
@@ -126,6 +115,12 @@ public class modem extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 29)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 51, 102));
         jLabel5.setText("UET");
+
+        txtContraseña.setText("jPasswordField1");
+        txtContraseña.setBorder(null);
+        txtContraseña.setCaretPosition(11);
+        txtContraseña.setPreferredSize(new java.awt.Dimension(64, 16));
+        txtContraseña.setScrollOffset(0);
 
         javax.swing.GroupLayout vistaLayout = new javax.swing.GroupLayout(vista);
         vista.setLayout(vistaLayout);
@@ -158,12 +153,6 @@ public class modem extends javax.swing.JPanel {
                         .addGap(70, 70, 70)
                         .addComponent(jLabel3))
                     .addGroup(vistaLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(vistaLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(vistaLayout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(imagen7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
@@ -172,8 +161,14 @@ public class modem extends javax.swing.JPanel {
                         .addGap(50, 50, 50)
                         .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
-                        .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                        .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(vistaLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(vistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtContraseña, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator2))
+                        .addGap(20, 20, 20)))
+                .addGap(92, 92, 92))
         );
         vistaLayout.setVerticalGroup(
             vistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,11 +189,11 @@ public class modem extends javax.swing.JPanel {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addComponent(jLabel3)
-                .addGap(7, 7, 7)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
+                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addGroup(vistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imagen7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imagen8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,7 +222,7 @@ public class modem extends javax.swing.JPanel {
 
     if (usuario.isEmpty() || contraseña.isEmpty()
             || usuario.equals("Ingrese su usuario")
-            || contraseña.equals("***********")) {
+            || contraseña.equals("")) {
         JOptionPane.showMessageDialog(this,
             "Por favor complete todos los campos",
             "Campos Vacíos",
@@ -297,22 +292,7 @@ public class modem extends javax.swing.JPanel {
     txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
     txtUsuario.setText("Ingrese su usuario");
     }//GEN-LAST:event_txtUsuarioFocusLost
-    }
-    private void txtContraseñaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtContraseñaFocusGained
-        // TODO add your handling code here:
-          if (txtContraseña.getText().equals("***********")) {
-    txtContraseña.setText("");
-    txtContraseña.setForeground(java.awt.Color.BLACK);
-    } 
-    }//GEN-LAST:event_txtContraseñaFocusGained
-
-    private void txtContraseñaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtContraseñaFocusLost
-        // TODO add your handling code here:
-        if (txtContraseña.getText().isEmpty()) {
-    txtContraseña.setForeground(new java.awt.Color(153, 153, 153));
-    txtContraseña.setText("***********");
-    }//GEN-LAST:event_txtContraseñaFocusLost
-    }
+    }    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
@@ -327,7 +307,7 @@ public class modem extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel sello1;
-    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     private javax.swing.JPanel vista;
     // End of variables declaration//GEN-END:variables

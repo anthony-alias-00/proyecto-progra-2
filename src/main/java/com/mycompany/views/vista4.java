@@ -292,24 +292,25 @@ private void devolverLibro() {
  * Configurar interfaz según el rol del usuario
  */
 private void configurarSegunRol() {
-    if (usuarioLogueado == null) {
+      if (usuarioLogueado == null) {
         System.err.println("No hay usuario logueado en devoluciones");
         return;
     }
     
     if ("USUARIO".equalsIgnoreCase(usuarioLogueado.getTipo())) {
         // MODO USUARIO: Solo ve sus libros prestados        
-        // Ocultar ComboBox de usuarios
         cmbUsuarios.setVisible(false);
         
-      
+        // Mostrar el nombre junto a "Usuario:"
+        texto3.setText("Usuario: " + usuarioLogueado.getNombre() + " " + usuarioLogueado.getApellido());
+        texto3.setBounds(texto3.getX(), texto3.getY(), 260, texto3.getHeight());
+        
         cargarLibrosPrestados();
         
     } else {
-        // MODO ADMIN: Puede ver libros de cualquier usuario
-     
-        // ComboBox de usuarios sigue visible
+        // MODO ADMIN
         cmbUsuarios.setVisible(true);
+        texto3.setText("Usuario:");
     }
 }
   

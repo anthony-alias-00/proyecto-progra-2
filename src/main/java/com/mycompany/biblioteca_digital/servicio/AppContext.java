@@ -19,11 +19,12 @@ public class AppContext {
     private final RegistroUsuario registroUsuario;
     private final LibroOpciones libroOpciones;
     private final PrestamoControl prestamoControl;
-
+    private final SalaControl salaControl;
     private AppContext() {
         this.registroUsuario = new RegistroUsuario();
         this.libroOpciones = new LibroOpciones();
         this.prestamoControl = new PrestamoControl();
+        this.salaControl = new SalaControl();
         cargarDatosIniciales();
     }
 
@@ -118,4 +119,5 @@ public class AppContext {
     public RegistroUsuario getRegistroUsuario() { return registroUsuario; }
     public LibroOpciones getLibroOpciones() { return libroOpciones; }
     public PrestamoControl getPrestamoControl() { return prestamoControl; }
+    public SalaControl getSalaControl() { return salaControl; }
 }

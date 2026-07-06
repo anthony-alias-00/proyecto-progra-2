@@ -16,22 +16,20 @@ public class LibroOpciones {
         this.catalogo = new ArbolAVL();
         this.contadorId = 1;
     }
-    /**
- * Equivalente a LibroDAO.existeISBN()
- */
+ 
 public boolean existeISBN(String isbn) {
     return buscarPorISBN(isbn) != null;
 }
 
 /**
- * Equivalente a LibroDAO.insertar() - usa el mismo flujo que agregarLibro
+ * usa el mismo flujo que agregarLibro
  */
 public boolean insertar(Libro libro) {
     return agregarLibro(libro);
 }
 
 /**
- * Equivalente a LibroDAO.buscarPorId()
+ * buscarPorId()
  */
 public Libro buscarPorId(int idLibro) {
     return catalogo.listarTodos().stream()
@@ -40,9 +38,7 @@ public Libro buscarPorId(int idLibro) {
             .orElse(null);
 }
 
-/**
- * Equivalente a LibroDAO.actualizarDisponibilidad()
- */
+
 public boolean actualizarDisponibilidad(int idLibro, int nuevaCantidadDisponible) {
     Libro libro = buscarPorId(idLibro);
     if (libro == null) {
@@ -53,7 +49,7 @@ public boolean actualizarDisponibilidad(int idLibro, int nuevaCantidadDisponible
 }
 
 /**
- * Equivalente a LibroDAO.eliminar(int) - elimina por id
+ * elimina por id
  */
 public boolean eliminar(int idLibro) {
     Libro libro = buscarPorId(idLibro);
@@ -64,7 +60,7 @@ public boolean eliminar(int idLibro) {
 }
 
 /**
- * Equivalente a LibroDAO.actualizar() - actualiza usando el objeto completo
+ *  actualiza usando el objeto completo
  */
 public boolean actualizar(Libro libro) {
     return actualizarLibro(libro);
@@ -130,8 +126,7 @@ public boolean actualizar(Libro libro) {
     }
 
     /**
-     * Devuelve el catalogo ordenado por el criterio indicado
-     * usando MergeSort (recursivo).
+     * Devuelve el catalogo ordenado por el criterio indicado.
      */
     public List<Libro> obtenerLibrosOrdenados(String criterio) {
         return Ordenamientos.mergeSort(catalogo.listarTodos(), criterio);

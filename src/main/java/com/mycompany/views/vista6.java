@@ -353,7 +353,7 @@ private void inicializar() {
         bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 120, 20));
 
         margen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/margen1.png"))); // NOI18N
-        bg.add(margen, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 520, 60));
+        bg.add(margen, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 520, 60));
 
         jScrollPane3.setViewportView(bg);
 
@@ -385,7 +385,7 @@ this.requestFocusInWindow();        // TODO add your handling code here:
 
     private void boton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton12ActionPerformed
         String[] opciones = {"Actualizar", "Ver Activos", "Ver Devueltos", "Ver Vencidos", 
-                        "Ver Todos", "Estadísticas"};
+                        "Ver Todos"};
     
     String seleccion = (String) javax.swing.JOptionPane.showInputDialog(
         this,
@@ -421,14 +421,6 @@ this.requestFocusInWindow();        // TODO add your handling code here:
                 
             case "Ver Todos":
                 filtrarPorEstado("TODOS");
-                break;
-                
-            case "EstadIsticas":
-                String stats = obtenerEstadisticas();
-                javax.swing.JOptionPane.showMessageDialog(this,
-                    stats,
-                    "Estadisticas",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
         }
