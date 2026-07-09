@@ -120,7 +120,6 @@ public class modem extends javax.swing.JPanel {
         txtContraseña.setBorder(null);
         txtContraseña.setCaretPosition(11);
         txtContraseña.setPreferredSize(new java.awt.Dimension(64, 16));
-        txtContraseña.setScrollOffset(0);
 
         javax.swing.GroupLayout vistaLayout = new javax.swing.GroupLayout(vista);
         vista.setLayout(vistaLayout);
@@ -192,8 +191,8 @@ public class modem extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
-                .addGap(27, 27, 27)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addGroup(vistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imagen7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imagen8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))

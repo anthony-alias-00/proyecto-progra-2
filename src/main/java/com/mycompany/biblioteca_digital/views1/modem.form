@@ -114,11 +114,11 @@
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="txtContraseña" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jSeparator2" pref="10" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jSeparator2" min="-2" pref="11" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="imagen7" min="-2" pref="90" max="-2" attributes="0"/>
                       <Component id="imagen8" min="-2" pref="90" max="-2" attributes="0"/>
@@ -292,7 +292,6 @@
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[64, 16]"/>
             </Property>
-            <Property name="scrollOffset" type="int" value="0"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -487,25 +487,25 @@ private void setdate() {
     }//GEN-LAST:event_boton4ActionPerformed
 
     private void boton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton6ActionPerformed
-        // TODO add your handling code here:
+     
                 ShowJPanel(new vista6(usuarioLogueado));
 
     }//GEN-LAST:event_boton6ActionPerformed
 
     private void boton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton7ActionPerformed
-        // TODO add your handling code here:
+       
           ShowJPanel(new vista7(usuarioLogueado));
     }//GEN-LAST:event_boton7ActionPerformed
 
     private void boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton8ActionPerformed
-        // TODO add your handling code here:
+      
          int confirmar = JOptionPane.showConfirmDialog(this,
         "¿Deseas cerrar sesión?",
         "Cerrar Sesión",
         JOptionPane.YES_NO_OPTION);
 
     if (confirmar == JOptionPane.YES_OPTION) {
-        this.dispose(); // cierra SOLO esta ventana, no el programa
+        this.dispose(); // cierra SOLO esta ventana
         new com.mycompany.biblioteca_digital.vista.VentanaLoading1().setVisible(true); // vuelve al login
     }
     }//GEN-LAST:event_boton8ActionPerformed
